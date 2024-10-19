@@ -1,7 +1,7 @@
--- In essence, this query compiles a comprehensive report on account transactions, 
--- showing how much money came in and went out each month, along with the resulting balance. 
--- It enables analysis of financial activity for each account over time, making it useful for financial reporting and auditing purposes.
-
+/* In essence, this query compiles a comprehensive report on account transactions, 
+showing how much money came in and went out each month, along with the resulting balance. 
+It enables analysis of financial activity for each account over time, making it useful for financial reporting and auditing purposes.
+*/
 
 WITH all_transactions AS (
   SELECT 
