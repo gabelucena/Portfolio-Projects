@@ -1,3 +1,8 @@
+-- In essence, this query compiles a comprehensive report on account transactions, 
+-- showing how much money came in and went out each month, along with the resulting balance. 
+-- It enables analysis of financial activity for each account over time, making it useful for financial reporting and auditing purposes.
+
+
 WITH all_transactions AS (
   SELECT 
     t.account_id,
@@ -49,6 +54,7 @@ SELECT
   SUM(at.amount) AS "Account Monthly Balance"
 FROM all_transactions at
 JOIN accounts a ON a.account_id = at.account_id
+  
 JOIN d_month d ON d.month_id = at.month_id
 JOIN d_year dy ON dy.year_id = at.year_id
 GROUP BY a.account_id, d.action_month, dy.action_year
